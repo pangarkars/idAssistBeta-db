@@ -63,9 +63,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     // this.toastElemObj = new Toast(this.toastEl.nativeElement, {});
-    this.getAPIData();
+    // this.getAPIData();
     // this.fetchSecretKey();
-    this.loadEnv();
+    // this.loadEnv();
   }
 
   ngAfterViewInit() {
@@ -190,7 +190,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.promptData[this.selectedPromptIndex].generatedOutput =
         this.outputTextStr;
       this.selectTab('output');
-      //this.saveData();
+      this.saveData();
     } catch (error: any) {
       this.showLoader = false;
       this.message = 'Error fetching the output!!';
@@ -198,9 +198,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
   saveData() {
-    this.currentPromptData = 'Test prompt data';
+    /* this.currentPromptData = 'Test prompt data';
     this.inputTextStr = 'test input data';
-    this.outputTextStr = 'test out put data';
+    this.outputTextStr = 'test out put data'; */
     const data = {
       prompt: this.currentPromptData,
       input: this.inputTextStr,
@@ -208,16 +208,18 @@ export class AppComponent implements OnInit, AfterViewInit {
     };
     this.envService.createRecord(data).subscribe(
       (response) => {
+        this.message = 'Data Saved in database';
+        this.toastMsgBox.show();
         console.log('Data saved in db');
       },
       (error) => {
-        console.error('Error saving data in db');
         console.log(error);
+        this.message = 'Error saving data in database';
+        this.errorToastMsgBox.show();
       }
     );
   }
   copyContent() {
-    this.saveData();
     this.clipboardApi.copyFromContent(this.outputTextStr);
     this.message = 'Content copied to clipboard';
     this.toastMsgBox.show();

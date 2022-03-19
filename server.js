@@ -1,7 +1,5 @@
 process.env.NODE_ENV != "production" ? require("dotenv").config() : null;
 
-console.log("process.env.NODE_ENV >>> " + process.env.NODE_ENV);
-console.log("process.env.database url >>> " + process.env.DATABASE_URL);
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -15,11 +13,7 @@ var cookieParser = require("cookie-parser");
 
 app.use(cookieParser());
 
-//require("./src/server/database");
-
 require("./src/app/routes/idassist.routes")(app);
-
-console.log("will sync db");
 
 const db = require("./src/app/models");
 db.sequelize.sync();

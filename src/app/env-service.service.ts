@@ -13,7 +13,6 @@ export class EnvServiceService {
   constructor(private http: HttpClient) {}
 
   getEnv(): Observable<any> {
-    console.log('trying to get heroku env...');
     return this.http
       .get(window.location.origin + '/backendKey')
       .pipe(map((response) => response));

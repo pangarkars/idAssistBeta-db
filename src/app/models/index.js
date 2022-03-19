@@ -12,12 +12,10 @@ pool.on("error", (err, client) => {
 
 pool.on("connect", (err, client) => {
   if (err) console.error(err);
-  console.log(client);
   console.log("Successfully connected to postgres.");
 });
 /* dbConfig.USER,
   dbConfig.PASSWORD, operatorsAliases: false,*/
-console.log("process.env.DATABASE_URL in index.js" + process.env.DATABASE_URL);
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
