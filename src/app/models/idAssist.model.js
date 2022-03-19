@@ -1,13 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
   const IdAssist = sequelize.define("idassists", {
     prompt: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     input: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     output: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     createdAt: {
       type: Sequelize.DATE,

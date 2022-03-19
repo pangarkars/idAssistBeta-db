@@ -18,6 +18,10 @@ require("./src/app/routes/idassist.routes")(app);
 const db = require("./src/app/models");
 db.sequelize.sync();
 
+/* db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+}); */
+
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/dist/id-assist/index.html"));
 });
