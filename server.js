@@ -12,7 +12,9 @@ var cookieParser = require("cookie-parser");
 
 app.use(cookieParser());
 
-require("./server/database");
+require("./src/server/database");
+
+require("./src/app/routes/idassist.routes")(app);
 
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/dist/id-assist/index.html"));

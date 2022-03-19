@@ -211,13 +211,13 @@ export class AppComponent implements OnInit, AfterViewInit {
         console.log('Data saved in db');
       },
       (error) => {
-        console.error('Error daving data in db');
+        console.error('Error saving data in db');
         console.log(error);
       }
     );
   }
   copyContent() {
-    // this.saveData();
+    this.saveData();
     this.clipboardApi.copyFromContent(this.outputTextStr);
     this.message = 'Content copied to clipboard';
     this.toastMsgBox.show();

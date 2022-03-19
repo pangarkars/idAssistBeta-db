@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-const baseUrl = 'http://localhost:8080/api/idassists';
 
 @Injectable({
   providedIn: 'root',
