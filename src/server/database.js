@@ -25,6 +25,9 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     acquire: 30000,
     idle: 10000,
   },
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 module.exports = sequelize;

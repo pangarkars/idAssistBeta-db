@@ -28,6 +28,9 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     acquire: dbConfig.pool.acquire,
     idle: dbConfig.pool.idle,
   },
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 const db = {};
 db.Sequelize = Sequelize;
