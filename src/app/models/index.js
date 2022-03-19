@@ -1,5 +1,21 @@
+const { Pool } = require("pg");
 const dbConfig = require("../config/db.config");
-const Sequelize = require("sequelize");
+//const Sequelize = require("sequelize");
+const { Sequelize } = require("sequelize");
+
+const pool = new Pool();
+
+pool.on("error", (err, client) => {
+  console.error("Unexpected error on idle client", err);
+  process.exit(-1);
+});
+
+pool.on("connect", (err, client) => {
+  if (err) console.error(err);
+  console.log(client);
+  console.log("Successfully connected to postgres.");
+});
+
 const sequelize = new Sequelize(
   process.env.DATABASE_URL,
   dbConfig.USER,
