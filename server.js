@@ -1,6 +1,7 @@
 process.env.NODE_ENV != "production" ? require("dotenv").config() : null;
 
 console.log("process.env.NODE_ENV >>> " + process.env.NODE_ENV);
+console.log("process.env.database url >>> " + process.env.DATABASE_URL);
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -21,7 +22,7 @@ require("./src/app/routes/idassist.routes")(app);
 console.log("will sync db");
 
 const db = require("./src/app/models");
-console.log("will sync db" + db);
+console.log(db);
 db.sequelize.sync();
 
 console.log("db sync done");
