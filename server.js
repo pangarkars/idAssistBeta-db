@@ -1,4 +1,6 @@
 process.env.NODE_ENV != "production" ? require("dotenv").config() : null;
+
+console.log("process.env.NODE_ENV >>> " + process.env.NODE_ENV);
 const express = require("express");
 const path = require("path");
 const app = express();

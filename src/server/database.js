@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 
-const pool = new Pool();
-
+const pool = new Pool(process.env.DATABASE_URL);
+console.log("process.env.DATABASE_URL" + process.env.DATABASE_URL);
 pool.on("error", (err, client) => {
   console.error("Unexpected error on idle client", err);
   process.exit(-1);
