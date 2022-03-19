@@ -18,8 +18,13 @@ app.use(cookieParser());
 
 require("./src/app/routes/idassist.routes")(app);
 
+console.log("will sync db");
+
 const db = require("./src/app/models");
+console.log("will sync db" + db);
 db.sequelize.sync();
+
+console.log("db sync done");
 
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/dist/id-assist/index.html"));
