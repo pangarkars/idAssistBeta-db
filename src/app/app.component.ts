@@ -208,8 +208,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     };
     this.envService.createRecord(data).subscribe(
       (response) => {
-        this.message = 'Data Saved in database';
-        this.toastMsgBox.show();
+        //this.message = 'Data Saved in database';
+        //this.toastMsgBox.show();
         console.log('Data saved in db');
       },
       (error) => {
