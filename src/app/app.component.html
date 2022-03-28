@@ -2,7 +2,7 @@
 <div class="header">
   <nav class="navbar navbar-light">
     <div class="container-fluid">
-      <div class="headerText">ID-Assist (Beta)</div>
+      <div class="headerText"><i class="bi bi-symmetry-horizontal icons"></i>ID-Assist (Beta)</div>
       <div class="d-flex pointerCursor" (click)="openModal()">
         © 2022 Asterial
       </div>
@@ -13,21 +13,24 @@
 <div class="showBorder">
   <div class="row itemLabel m-auto">
     <div class="col showBorder col col-lg-2 itemPrompt">
-      <div class="centerText">Prompt</div>
+      <div class="centerText">
+              <i class="bi bi-terminal icons  fa-lg"></i>
+            Prompt
+      </div>
     </div>
     <div
       class="col showBorder itemInputOutput"
       (click)="selectTab('input')"
       [ngClass]="{ isActive: showInput, itemInputOutput: showOutput }"
     >
-      <div class="centerText">Input</div>
+      <div class="centerText"> <i class="bi bi-box-arrow-in-right icons  fa-lg"></i>Input</div>
     </div>
     <div
       class="col showBorder itemInputOutput"
       (click)="selectTab('output')"
       [ngClass]="{ isActive: showOutput, itemInputOutput: showInput }"
     >
-      <div class="centerText">Output</div>
+      <div class="centerText"><i class="bi bi-box-arrow-right icons  fa-lg"></i>Output</div>
     </div>
   </div>
   <div class="row m-auto">
@@ -83,7 +86,7 @@
         type="button"
         class="btn btn-primary btnWidth mt-2 mb-2"
         (click)="generateOutput()"
-      >
+      ><i class="bi bi-gear-wide-connected icons"></i>
         Generate
       </button>
     </div>
@@ -103,16 +106,16 @@
       ></textarea>
       <button
         type="button"
-        class="btn btn-primary btnWidth mt-2 mb-2 bi bi-clipboard buttonColor"
+        class="btn btn-primary btnWidth mt-2 mb-2  buttonColor"
         (click)="copyContent()"
-      >
+      ><i class="bi bi-clipboard icons"></i>
         Copy
       </button>
     </div>
   </div>
 </div>
 <div
-  class="toast-container position-absolute bottom-0 start-50 translate-middle-x"
+  class="toast-container position-fixed bottom-0 end-0"
 >
   <div
     id="messageToast"
