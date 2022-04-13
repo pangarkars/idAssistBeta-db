@@ -1,7 +1,7 @@
 const db = require("../models");
 const Idassist = db.idassists;
 const Op = db.Sequelize.Op;
-// Create and Save a new Tutorial
+
 exports.create = (req, res) => {
   const sessionData = {
     prompt: req.body.prompt,
@@ -19,3 +19,8 @@ exports.create = (req, res) => {
       });
     });
 };
+
+/* exports.sendKey = (req, res) => {
+  res.send(process.env.API_KEY);
+};
+ */

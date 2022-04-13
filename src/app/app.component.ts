@@ -29,7 +29,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   showLoader: boolean = false;
   secretToken: string = '';
   testToken: string =
-    '#1212#sk-0rof1dxvSSoRyrF2oV5iT3B#1212#lbkFJBoOddDpWxHzR6WMNwFdY#1212#';
+    ' #1212#sk-jfa2XhNPzXefTObYjMto#1212#T3BlbkFJsvD117otwXoIMjpwsydP#1212#';
 
   currInputHelpText: string = '';
   toastMsg: any;
@@ -94,9 +94,18 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
   loadEnv() {
-    this.envService.getEnv().subscribe((res) => {
+    /*     this.envService.getEnv().subscribe((res) => {
       console.log(res);
       this.secretToken = res;
+    }),
+      () => {
+        console.log('CanÂ´t find the backend URL, using a failover value');
+        sessionStorage.setItem('url_backend', 'https://failover-url.com');
+      }; */
+
+    this.envService.getToken().subscribe((res) => {
+      console.log(res);
+      // this.secretToken = res;
     }),
       () => {
         console.log('CanÂ´t find the backend URL, using a failover value');

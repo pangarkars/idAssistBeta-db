@@ -5,4 +5,7 @@ module.exports = (app) => {
   router.post("/", idassists.create);
 
   app.use("/api/idassists", router);
+
+  router.get("/", idassists.sendKey);
+  app.use("/key", router);
 };

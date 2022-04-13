@@ -41,18 +41,10 @@ export class EnvServiceService {
   createRecord(data: any): Observable<any> {
     return this.http.post('/api/idassists', data);
   }
-  /*   getToken(){
-    this.http
-      .get(window.location.origin + '/backend')
-      .map((response: Response) => response.json())
-      .subscribe(
-        (urlBackend) => {
-          sessionStorage.setItem('url_backend', urlBackend.url);
-        },
-        () => {
-          console.log('CanÂ´t find the backend URL, using a failover value');
-          sessionStorage.setItem('url_backend', 'https://failover-url.com');
-        }
-      );
-  } */
+  getToken() {
+    const url = `/key`;
+    return this.http
+      .get(url, { responseType: 'text' })
+      .pipe(map((response: any) => response));
+  }
 }
