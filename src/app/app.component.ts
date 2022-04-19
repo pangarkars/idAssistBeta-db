@@ -29,7 +29,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   showLoader: boolean = false;
   secretToken: string = '';
   testToken: string =
-    ' #1212#sk-jfa2XhNPzXefTObYjMto#1212#T3BlbkFJsvD117otwXoIMjpwsydP#1212#';
+    ' #1212#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#1212#';
 
   currInputHelpText: string = '';
   toastMsg: any;
