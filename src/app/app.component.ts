@@ -28,7 +28,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   currentPromptBtn: string = '';
   showLoader: boolean = false;
   secretToken: string = '';
-  testToken: string = '#1212#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#1212#';
+  testToken: string = 
+  '#1212#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#1212#';
 
   currInputHelpText: string = '';
   toastMsg: any;
