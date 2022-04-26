@@ -65,7 +65,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     // this.toastElemObj = new Toast(this.toastEl.nativeElement, {});
     // this.getAPIData();
     // this.fetchSecretKey();
-    // this.loadEnv();
+    this.loadEnv();
   }
 
   ngAfterViewInit() {
