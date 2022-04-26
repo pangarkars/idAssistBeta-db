@@ -26,6 +26,11 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/dist/id-assist/index.html"));
 });
 
+// Nice and done!
+app.get("/", (req, res) => {
+  res.json({ key: process.env.API_KEY });
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

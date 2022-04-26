@@ -14,7 +14,7 @@ export class EnvServiceService {
 
   getEnv(): Observable<any> {
     return this.http
-      .get(window.location.origin + '/backendKey')
+      .get(window.location.origin + '/')
       .pipe(map((response) => response));
   }
 

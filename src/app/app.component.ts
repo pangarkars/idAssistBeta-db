@@ -95,11 +95,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   loadEnv() {
     this.envService.getEnv().subscribe((res) => {
+      console.log('@@@@@@@@INSIDE LOADENV');
       console.log(res);
+      sessionStorage.setItem('url_backend', res.key);
       this.secretToken = res;
     }),
       () => {
-        console.log('CanÂ´t find the backend URL, using a failover value');
+        console.log("Can't find the backend URL, using a failover value");
         sessionStorage.setItem('url_backend', 'https://failover-url.com');
       };
   }
