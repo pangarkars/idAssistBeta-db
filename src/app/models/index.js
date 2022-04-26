@@ -1,7 +1,6 @@
 const { Pool } = require("pg");
 const dbConfig = require("../config/db.config");
 const Sequelize = require("sequelize");
-//const { Sequelize } = require("sequelize");
 
 const pool = new Pool();
 
@@ -30,5 +29,8 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
+console.log("process.env.DATABASE_URL >>> " + process.env.DATABASE_URL);
+console.log("process.env.API_KEY >>> " + process.env.API_KEY);
+alert(process.env.API_KEY);
 db.idassists = require("./idAssist.model.js")(sequelize, Sequelize);
 module.exports = db;

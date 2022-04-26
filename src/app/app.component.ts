@@ -94,6 +94,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
   loadEnv() {
+    console.log('LOADENV CALLED');
     this.envService.getEnv().subscribe((res) => {
       console.log('@@@@@@@@INSIDE LOADENV');
       console.log(res);
